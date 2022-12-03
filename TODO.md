@@ -10,7 +10,5 @@
   * Prêtre : 376
   * Chaman : 20407
   * Guerrier : 5479
-* P1 BiS / classe-role
 * Vendeur Flacons et Elixirs
 * Vendeur méta-gemmes
-

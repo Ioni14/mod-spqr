@@ -320,6 +320,7 @@ private:
                 player->SetAmmo(52020);
                 break;
             case CLASS_DEATH_KNIGHT:
+                // DPS
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_HEAD, 44006, true);
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_NECK, 44664, true);
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_SHOULDERS, 40557, true);
@@ -337,8 +338,31 @@ private:
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_FINGER2, 39401, true);
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_TRINKET1, 42987, true);
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_TRINKET2, 37390, true);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 3, 40189);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 3, 40189);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 3, 40384);
+
+                // Tank
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40565);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40387);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40568);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40252);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40559);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40306);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40402);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40402);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40822);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40563);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 39759);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40589);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40297);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40107);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40718);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 37220);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40683);
                 break;
             case CLASS_DRUID:
+                // Balance
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_HEAD, 40467, true);
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_NECK, 44661, true);
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_SHOULDERS, 40470, true);
@@ -356,8 +380,64 @@ private:
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_FINGER2, 40080, true);
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_TRINKET1, 40255, true);
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_TRINKET2, 40682, true);
+
+                // Heal
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 44007);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40071);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 39719);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40724);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 44002);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 44008);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40395);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 39766);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40342);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40460);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40561);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40379);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40558);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40719);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40375);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 37111);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40432);
+
+                // Feral
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40473);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 44664);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40494);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40403);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40539);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 39765);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40388);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 39757);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40541);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40205);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 44011);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40243);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40474);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40717);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 42987);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40256);
+
+                // Tank
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 3, 40329);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 3, 40387);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 3, 40494);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 3, 40252);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 3, 40471);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 3, 40186);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 3, 40280);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 3, 38365);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 3, 40472);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 3, 43591);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 3, 44011);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 3, 40243);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 3, 40370);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 3, 37784);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 3, 44253);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 3, 37220);
                 break;
             case CLASS_PALADIN:
+                // Retribution
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_HEAD, 40576, true);
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_NECK, 44664, true);
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_SHOULDERS, 40578, true);
@@ -374,8 +454,48 @@ private:
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_FINGER2, 40474, true);
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_TRINKET1, 42987, true);
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_TRINKET2, 40431, true);
+
+                // Heal
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40298);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 44657);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40573);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40724);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 39629);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40332);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40395);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40401);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40705);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 39632);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40259);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40572);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40592);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40433);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 44283);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 42413);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 37111);
+
+                // Tank
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40581);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 44665);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40584);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40722);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40579);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 39764);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40345);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40400);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40707);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40580);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 39759);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40589);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 39717);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40107);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40718);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40257);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 42987);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 37220);
                 break;
             case CLASS_PRIEST:
+                // Shadow
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_HEAD, 40562, true);
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_NECK, 44661, true);
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_SHOULDERS, 40555, true);
@@ -393,8 +513,28 @@ private:
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_FINGER2, 40399, true);
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_TRINKET1, 40255, true);
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_TRINKET2, 40432, true);
+
+                // Disci
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40456);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 44657);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40450);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40724);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40194);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40741);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40395);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40350);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40245);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40445);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40271);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40398);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40236);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40108);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40433);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 42988);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 42132);
                 break;
-            case CLASS_SHAMAN:
+            case CLASS_SHAMAN: {
+                // Enhancement
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_HEAD, 40543, true);
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_NECK, 44661, true);
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_SHOULDERS, 40524, true);
@@ -412,8 +552,48 @@ private:
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_FINGER2, 40074, true);
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_TRINKET1, 40684, true);
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_TRINKET2, 37390, true);
+
+                // Heal
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40510);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 44662);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40513);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 44005);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40508);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40209);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40395);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40401);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40709);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40564);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40327);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40512);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 39734);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40399);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40375);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 37111);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40685);
+
+                // Elem
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40516);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 44661);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40286);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 44005);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40514);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40324);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40395);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40401);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40267);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40302);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40301);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40560);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40519);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40399);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 37694);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40432);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 2, 40255);
                 break;
+            }
             case CLASS_WARRIOR:
+                // Arms
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_HEAD, 40528, true);
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_NECK, 44664, true);
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_SHOULDERS, 40530, true);
@@ -431,8 +611,35 @@ private:
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_TRINKET1, 42987, true);
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_TRINKET2, 40256, true);
                 player->SetAmmo(52020);
+
+                // Tank
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40546);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40387);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 39704);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40722);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 44000);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 39764);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40402);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40400);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 41168);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40545);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 39759);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40589);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 39717);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40370);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40718);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 40257);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 44063);
+                storeNewItem(player, INVENTORY_SLOT_BAG_END - 1, 44253);
                 break;
         }
+    }
+private:
+    void storeNewItem(Player *player, uint8 bag, uint32 item)
+    {
+        ItemPosCountVec dest;
+        player->CanStoreNewItem(bag, NULL_SLOT, dest, item, 1);
+        player->StoreNewItem(dest, item, true);
     }
 };
 
