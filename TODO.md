@@ -10,5 +10,4 @@
   * Prêtre : 376
   * Chaman : 20407
   * Guerrier : 5479
-* Vendeur Flacons et Elixirs
 * Vendeur méta-gemmes
