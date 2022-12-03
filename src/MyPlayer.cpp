@@ -37,21 +37,31 @@ public:
         player->AddItem(40211, 40); // Potion hâte
         player->AddItem(40212, 40); // Potion crit
 
+        player->learnSpell(33388 /* Apprenti cavalier */);
+        player->learnSpell(33391 /* Compagnon cavalier */);
+        player->learnSpell(34090 /* Expert cavalier */);
+        player->learnSpell(34091 /* Artisan cavalier */);
+        player->learnSpell(54197 /* Vol par temps froid */);
+        player->learnSpell(59976 /* Proto-drake noir */);
+        player->learnSpell(17481 /* Destrier de la mort de Vaillefendre */);
+
         switch (player->getClass()) {
             case CLASS_WARLOCK:
                 player->learnSpell(5784 /* Palefroi corrompu */);
+                player->learnSpell(23161 /* Destrier de l'effroi */);
                 player->learnSpell(1122); // Inferno
                 player->learnSpell(691); // Felhunter
                 player->learnSpell(697); // Voidwalker
                 player->learnSpell(712); // Succubus
                 player->learnSpell(713); // Incubus
                 player->learnSpell(18540); // Ritual of Doom
-                player->AddItem(6265, 5); // Soul shard
+                player->AddItem(6265, 5); // Eclat d'âme
                 player->AddItem(41597, 1); // Sac d'âmes
                 break;
             case CLASS_HUNTER: {
                 player->EquipNewItem(INVENTORY_SLOT_BAG_END - 1, 44447, true); // Ammo Pouch
                 player->AddItem(52020, 28000); // Bullets
+                player->AddItem(43005, 40); // Pet food
                 player->AddQuest(sObjectMgr->GetQuestTemplate(6102), nullptr);
                 player->RewardQuest(sObjectMgr->GetQuestTemplate(6102), 0, player, false);
                 player->AddQuest(sObjectMgr->GetQuestTemplate(6103), nullptr);
@@ -67,15 +77,52 @@ public:
                 }
                 break;
             }
+            case CLASS_MAGE:
+                // Portals
+                player->learnSpell(53142);
+                if (player->GetTeamId() == TEAM_ALLIANCE) {
+                    player->learnSpell(11419);
+                    player->learnSpell(32266);
+                    player->learnSpell(11416);
+                    player->learnSpell(33691);
+                    player->learnSpell(10059);
+                    player->learnSpell(49360);
+                }
+                player->AddItem(17032, 20); // Portal rune
+                break;
+            case CLASS_ROGUE:
+                learnSkill(player, 633); // crochetage
+                player->AddItem(7676, 20); // Tea
+                player->AddItem(52020, 1000); // Bullets
+                break;
+            case CLASS_WARRIOR:
+                player->AddItem(52020, 1000); // Bullets
+                player->AddQuest(sObjectMgr->GetQuestTemplate(1498), nullptr);
+                player->RewardQuest(sObjectMgr->GetQuestTemplate(1498), 0, player, false);
+                player->AddQuest(sObjectMgr->GetQuestTemplate(1719), nullptr);
+                player->RewardQuest(sObjectMgr->GetQuestTemplate(1719), 0, player, false);
+                break;
+            case CLASS_DRUID:
+                player->learnSpell(33943); // Forme de vol
+                player->learnSpell(40120); // Forme de vol rapide
+                // Forme d'ours
+                player->AddQuest(sObjectMgr->GetQuestTemplate(6001), nullptr);
+                player->RewardQuest(sObjectMgr->GetQuestTemplate(6001), 0, player, false);
+                break;
             case CLASS_SHAMAN:
                 // Totems
-                player->AddItem(5175, 1);
-                player->AddItem(5176, 1);
-                player->AddItem(5177, 1);
-                player->AddItem(5178, 1);
+                player->AddQuest(sObjectMgr->GetQuestTemplate(9451), nullptr);
+                player->RewardQuest(sObjectMgr->GetQuestTemplate(9451), 0, player, false);
+                player->AddQuest(sObjectMgr->GetQuestTemplate(9555), nullptr);
+                player->RewardQuest(sObjectMgr->GetQuestTemplate(9555), 0, player, false);
+                player->AddQuest(sObjectMgr->GetQuestTemplate(9509), nullptr);
+                player->RewardQuest(sObjectMgr->GetQuestTemplate(9509), 0, player, false);
+                player->AddQuest(sObjectMgr->GetQuestTemplate(9554), nullptr);
+                player->RewardQuest(sObjectMgr->GetQuestTemplate(9554), 0, player, false);
                 break;
             case CLASS_PALADIN:
                 player->learnSpell(13819 /* Cheval de guerre */);
+                player->learnSpell(23214 /* Destrier */);
                 player->learnSpell(7328); // Redemption
                 break;
             case CLASS_DEATH_KNIGHT: {
@@ -130,12 +177,6 @@ public:
             }
                 break;
         }
-
-        player->learnSpell(33388 /* Apprenti cavalier */);
-        player->learnSpell(34091 /* Artisan cavalier */);
-        player->learnSpell(54197 /* Vol par temps froid */);
-        player->learnSpell(59976 /* Proto-drake noir */);
-        player->learnSpell(17481 /* Destrier de la mort de Vaillefendre */);
 
         // Weapon skills
         learnSkill(player, 43);
@@ -237,6 +278,159 @@ private:
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_FINGER2, 40474, true);
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_TRINKET1, 44253, true);
                 player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_TRINKET2, 40256, true);
+                player->SetAmmo(52020);
+                break;
+            case CLASS_MAGE:
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_HEAD, 40416, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_NECK, 44661, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_SHOULDERS, 40419, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_BACK, 44005, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_CHEST, 40418, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_WRISTS, 44008, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_MAINHAND, 40396, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_OFFHAND, 40273, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_RANGED, 39712, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_HANDS, 40415, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_WAIST, 40301, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_LEGS, 40560, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_FEET, 40246, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_FINGER1, 40719, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_FINGER2, 40399, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_TRINKET1, 40255, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_TRINKET2, 40432, true);
+                break;
+            case CLASS_ROGUE:
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_HEAD, 40499, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_NECK, 44664, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_SHOULDERS, 40502, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_BACK, 40403, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_CHEST, 40539, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_WRISTS, 39765, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_MAINHAND, 39714, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_OFFHAND, 40386, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_RANGED, 40385, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_HANDS, 40496, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_WAIST, 40260, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_LEGS, 40500, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_FEET, 39701, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_FINGER1, 40074, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_FINGER2, 40474, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_TRINKET1, 40684, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_TRINKET2, 44253, true);
+                player->SetAmmo(52020);
+                break;
+            case CLASS_DEATH_KNIGHT:
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_HEAD, 44006, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_NECK, 44664, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_SHOULDERS, 40557, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_BACK, 40403, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_CHEST, 40550, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_WRISTS, 40330, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_MAINHAND, 40402, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_OFFHAND, 40491, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_RANGED, 42620, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_HANDS, 40347, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_WAIST, 40278, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_LEGS, 40294, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_FEET, 39706, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_FINGER1, 40075, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_FINGER2, 39401, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_TRINKET1, 42987, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_TRINKET2, 37390, true);
+                break;
+            case CLASS_DRUID:
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_HEAD, 40467, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_NECK, 44661, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_SHOULDERS, 40470, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_BACK, 44005, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_CHEST, 40469, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_WRISTS, 44008, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_MAINHAND, 40395, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_OFFHAND, 40192, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_RANGED, 40321, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_HANDS, 40466, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_WAIST, 40561, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_LEGS, 40560, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_FEET, 40519, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_FINGER1, 40399, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_FINGER2, 40080, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_TRINKET1, 40255, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_TRINKET2, 40682, true);
+                break;
+            case CLASS_PALADIN:
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_HEAD, 40576, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_NECK, 44664, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_SHOULDERS, 40578, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_BACK, 40403, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_CHEST, 40574, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_WRISTS, 40186, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_MAINHAND, 40384, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_RANGED, 42852, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_HANDS, 40541, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_WAIST, 40260, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_LEGS, 40577, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_FEET, 40591, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_FINGER1, 40075, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_FINGER2, 40474, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_TRINKET1, 42987, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_TRINKET2, 40431, true);
+                break;
+            case CLASS_PRIEST:
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_HEAD, 40562, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_NECK, 44661, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_SHOULDERS, 40555, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_BACK, 44005, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_CHEST, 40234, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_WRISTS, 44008, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_MAINHAND, 40395, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_OFFHAND, 40273, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_RANGED, 39712, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_HANDS, 40454, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_WAIST, 40561, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_LEGS, 40560, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_FEET, 40558, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_FINGER1, 40719, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_FINGER2, 40399, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_TRINKET1, 40255, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_TRINKET2, 40432, true);
+                break;
+            case CLASS_SHAMAN:
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_HEAD, 40543, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_NECK, 44661, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_SHOULDERS, 40524, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_BACK, 40403, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_CHEST, 40523, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_WRISTS, 40736, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_MAINHAND, 39763, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_OFFHAND, 39468, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_RANGED, 40322, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_HANDS, 40520, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_WAIST, 39762, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_LEGS, 40522, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_FEET, 40367, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_FINGER1, 40474, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_FINGER2, 40074, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_TRINKET1, 40684, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_TRINKET2, 37390, true);
+                break;
+            case CLASS_WARRIOR:
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_HEAD, 40528, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_NECK, 44664, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_SHOULDERS, 40530, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_BACK, 40403, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_CHEST, 40539, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_WRISTS, 40330, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_MAINHAND, 40384, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_RANGED, 40385, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_HANDS, 40541, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_WAIST, 40205, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_LEGS, 40318, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_FEET, 40591, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_FINGER1, 43993, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_FINGER2, 40474, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_TRINKET1, 42987, true);
+                player->EquipNewItem(EquipmentSlots::EQUIPMENT_SLOT_TRINKET2, 40256, true);
+                player->SetAmmo(52020);
                 break;
         }
     }

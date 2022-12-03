@@ -7,11 +7,11 @@ public:
     Enchantor() : CreatureScript("Enchantor") {}
 
     bool OnGossipHello(Player *player, Creature *creature) {
-        AddGossipItemFor(player, 10, "Enchanteur 450 + recettes", GOSSIP_SENDER_MAIN, 1);
-        AddGossipItemFor(player, 10, "Couture 450 + recettes", GOSSIP_SENDER_MAIN, 2);
-        AddGossipItemFor(player, 10, "Joaillerie 450 + recettes", GOSSIP_SENDER_MAIN, 3);
-        AddGossipItemFor(player, 10, "Ingénierie 450 + recettes", GOSSIP_SENDER_MAIN, 4);
-        AddGossipItemFor(player, 10, "Alchimie 450 + recettes", GOSSIP_SENDER_MAIN, 5);
+        AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Enchanteur 450 + recettes", GOSSIP_SENDER_MAIN, 1);
+        AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Couture 450 + recettes", GOSSIP_SENDER_MAIN, 2);
+        AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Joaillerie 450 + recettes", GOSSIP_SENDER_MAIN, 3);
+        AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Ingénierie 450 + recettes", GOSSIP_SENDER_MAIN, 4);
+        AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Alchimie 450 + recettes", GOSSIP_SENDER_MAIN, 5);
         SendGossipMenuFor(player, 1, creature->GetGUID());
 
         return true;
