@@ -1,0 +1,13 @@
+[worldserver]
+
+########################################
+# SPQR configuration
+########################################
+#
+#    SPQR.Enable
+#        Description: Enable SPQR module
+#        Default:     0 - Disabled
+#                     1 - Enabled
+#
+
+SPQR.Enable = 1
