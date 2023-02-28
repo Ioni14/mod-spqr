@@ -1,5 +1,6 @@
 void AddMyPlayerScripts();
 void AddEnchantorScripts();
+void AddStufferScripts();
 
 // Add all
 // cf. the naming convention https://github.com/azerothcore/azerothcore-wotlk/blob/master/doc/changelog/master.md#how-to-upgrade-4
@@ -8,4 +9,5 @@ void Addmod_spqrScripts()
 {
     AddMyPlayerScripts();
     AddEnchantorScripts();
+    AddStufferScripts();
 }

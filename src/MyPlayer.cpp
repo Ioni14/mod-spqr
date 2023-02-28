@@ -11,14 +11,14 @@ public:
     MyPlayer() : PlayerScript("MyPlayer") {}
 
     void OnLogin(Player *player) override {
-        if (!sConfigMgr->GetOption<bool>("SPQR.Enable", false)) {
+        if (!sConfigMgr->GetOption<bool>("NeoLithic.Enable", false)) {
             return;
         }
-        ChatHandler(player->GetSession()).SendSysMessage("SPQR module loaded.");
+        ChatHandler(player->GetSession()).SendSysMessage("NeoLithic module loaded.");
     }
 
     void OnFirstLogin(Player *player) override {
-        if (!sConfigMgr->GetOption<bool>("SPQR.Enable", false)) {
+        if (!sConfigMgr->GetOption<bool>("NeoLithic.Enable", false)) {
             return;
         }
 
