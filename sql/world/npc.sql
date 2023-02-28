@@ -114,6 +114,44 @@ VALUES (300202, 0, 46376, 0, 0, 0, 0),
        (300202, 3, 42993, 0, 0, 0, 0)
 ;
 
+-- Composants
+DELETE FROM acore_world.creature_template WHERE entry = 300204;
+INSERT INTO acore_world.creature_template (entry, difficulty_entry_1, difficulty_entry_2, difficulty_entry_3,
+                                           KillCredit1, KillCredit2, modelid1, modelid2, modelid3, modelid4, name,
+                                           subname, IconName, gossip_menu_id, minlevel, maxlevel, exp, faction, npcflag,
+                                           speed_walk, speed_run, speed_swim, speed_flight, detection_range, scale,
+                                           `rank`, dmgschool, DamageModifier, BaseAttackTime, RangeAttackTime,
+                                           BaseVariance, RangeVariance, unit_class, unit_flags, unit_flags2,
+                                           dynamicflags, family, trainer_type, trainer_spell, trainer_class,
+                                           trainer_race, type, type_flags, lootid, pickpocketloot, skinloot,
+                                           PetSpellDataId, VehicleId, mingold, maxgold, AIName, MovementType,
+                                           HoverHeight, HealthModifier, ManaModifier, ArmorModifier, ExperienceModifier,
+                                           RacialLeader, movementId, RegenHealth, mechanic_immune_mask,
+                                           spell_school_immune_mask, flags_extra, ScriptName, VerifiedBuild)
+VALUES (300204, 0, 0, 0, 0, 0, 30721, 0, 0, 0, 'Composants', null, '', 0, 80, 80, 2, 35, 128, 1, 1.14286, 1, 1,
+        20, 0.5, 0, 0, 1, 2000, 2000, 1, 1, 8, 32768, 2048, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 1, 1, 1,
+        1, 1, 0, 0, 1, 0, 0, 0, '', 12340);
+
+DELETE FROM acore_world.npc_vendor WHERE entry = 300204;
+INSERT INTO acore_world.npc_vendor (entry, slot, item, maxcount, incrtime, ExtendedCost, VerifiedBuild)
+VALUES (300204, 0, 39690 /* Déclencheur d'explosion volatile */, 0, 0, 0, 0)
+     , (300204, 0, 36913 /* Barre saronite */, 0, 0, 0, 0)
+     , (300204, 0, 41163 /* Barre titane */, 0, 0, 0, 0)
+     , (300204, 0, 39682 /* Condensateur surchargé */, 0, 0, 0, 0)
+     , (300204, 0, 39681 /* Boulons cobalt */, 0, 0, 0, 0)
+     , (300204, 0, 39683 /* Tube givracier */, 0, 0, 0, 0)
+     , (300204, 0, 35623 /* Air éternel */, 0, 0, 0, 0)
+     , (300204, 0, 36860 /* Feu éternel */, 0, 0, 0, 0)
+     , (300204, 0, 35624 /* Terre éternelle */, 0, 0, 0, 0)
+     , (300204, 0, 33470 /* Etoffe tisse-givre */, 0, 0, 0, 0)
+     , (300204, 0, 40772 /* Couteau gnome */, 0, 0, 0, 0)
+     , (300204, 1, 34057 /* Cristal abyssal */, 0, 0, 0, 0)
+     , (300204, 1, 34052 /* Eclat de rêve */, 0, 0, 0, 0)
+     , (300204, 1, 34055 /* Essence cosmique sup */, 0, 0, 0, 0)
+     , (300204, 1, 34054 /* Poussière d'infini */, 0, 0, 0, 0)
+     , (300204, 9, 6265 /* Fragment d'âme */, 0, 0, 0, 0)
+;
+
 -- Stuff P2
 DELETE FROM acore_world.creature_template WHERE entry = 300203;
 INSERT INTO acore_world.creature_template (entry, difficulty_entry_1, difficulty_entry_2, difficulty_entry_3,
