@@ -62,7 +62,7 @@ VALUES (300201, 0, 41611 /* Boucle de ceinture éternelle */, 0, 0, 0, 0),
        (300201, 1, 50337 /*  */, 0, 0, 0, 0)
 ;
 
-
+-- Consommables
 DELETE FROM acore_world.creature_template WHERE entry = 300202;
 INSERT INTO acore_world.creature_template (entry, difficulty_entry_1, difficulty_entry_2, difficulty_entry_3,
                                            KillCredit1, KillCredit2, modelid1, modelid2, modelid3, modelid4, name,
@@ -105,6 +105,7 @@ VALUES (300202, 0, 46376, 0, 0, 0, 0),
        (300202, 2, 40211, 0, 0, 0, 0),
        (300202, 2, 40212, 0, 0, 0, 0),
        (300202, 2, 40087, 0, 0, 0, 0),
+       (300202, 2, 40093, 0, 0, 0, 0),
        (300202, 3, 43015, 0, 0, 0, 0),
        (300202, 3, 42999, 0, 0, 0, 0),
        (300202, 3, 43000, 0, 0, 0, 0),
@@ -145,6 +146,8 @@ VALUES (300204, 0, 39690 /* Déclencheur d'explosion volatile */, 0, 0, 0, 0)
      , (300204, 0, 35624 /* Terre éternelle */, 0, 0, 0, 0)
      , (300204, 0, 33470 /* Etoffe tisse-givre */, 0, 0, 0, 0)
      , (300204, 0, 40772 /* Couteau gnome */, 0, 0, 0, 0)
+     , (300204, 0, 42641 /* Sappeur */, 0, 0, 0, 0)
+     , (300204, 0, 41119 /* Grenade */, 0, 0, 0, 0)
      , (300204, 1, 34057 /* Cristal abyssal */, 0, 0, 0, 0)
      , (300204, 1, 34052 /* Eclat de rêve */, 0, 0, 0, 0)
      , (300204, 1, 34055 /* Essence cosmique sup */, 0, 0, 0, 0)
@@ -169,6 +172,42 @@ INSERT INTO acore_world.creature_template (entry, difficulty_entry_1, difficulty
 VALUES (300203, 0, 0, 0, 0, 0, 30721, 0, 0, 0, 'Stuff P2', null, '', 0, 80, 80, 2, 35, 1, 1, 1.14286, 1, 1, 20, 0.5,
         0, 0, 1, 2000, 2000, 1, 1, 8, 0, 2048, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 1, 1, 1, 1, 1, 0, 0,
         1, 0, 0, 0, 'Stuffer', 12340);
+
+-- Reputation
+DELETE FROM acore_world.creature_template WHERE entry = 300205;
+INSERT INTO acore_world.creature_template (entry, difficulty_entry_1, difficulty_entry_2, difficulty_entry_3,
+                                           KillCredit1, KillCredit2, modelid1, modelid2, modelid3, modelid4, name,
+                                           subname, IconName, gossip_menu_id, minlevel, maxlevel, exp, faction, npcflag,
+                                           speed_walk, speed_run, speed_swim, speed_flight, detection_range, scale,
+                                           `rank`, dmgschool, DamageModifier, BaseAttackTime, RangeAttackTime,
+                                           BaseVariance, RangeVariance, unit_class, unit_flags, unit_flags2,
+                                           dynamicflags, family, trainer_type, trainer_spell, trainer_class,
+                                           trainer_race, type, type_flags, lootid, pickpocketloot, skinloot,
+                                           PetSpellDataId, VehicleId, mingold, maxgold, AIName, MovementType,
+                                           HoverHeight, HealthModifier, ManaModifier, ArmorModifier, ExperienceModifier,
+                                           RacialLeader, movementId, RegenHealth, mechanic_immune_mask,
+                                           spell_school_immune_mask, flags_extra, ScriptName, VerifiedBuild)
+VALUES (300205, 0, 0, 0, 0, 0, 30721, 0, 0, 0, 'Reputations', null, '', 0, 80, 80, 2, 35, 1, 1, 1.14286, 1, 1, 20, 0.5,
+        0, 0, 1, 2000, 2000, 1, 1, 8, 0, 2048, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 1, 1, 1, 1, 1, 0, 0,
+        1, 0, 0, 0, 'Reputation', 12340);
+
+-- Reputation
+DELETE FROM acore_world.creature_template WHERE entry = 300206;
+INSERT INTO acore_world.creature_template (entry, difficulty_entry_1, difficulty_entry_2, difficulty_entry_3,
+                                           KillCredit1, KillCredit2, modelid1, modelid2, modelid3, modelid4, name,
+                                           subname, IconName, gossip_menu_id, minlevel, maxlevel, exp, faction, npcflag,
+                                           speed_walk, speed_run, speed_swim, speed_flight, detection_range, scale,
+                                           `rank`, dmgschool, DamageModifier, BaseAttackTime, RangeAttackTime,
+                                           BaseVariance, RangeVariance, unit_class, unit_flags, unit_flags2,
+                                           dynamicflags, family, trainer_type, trainer_spell, trainer_class,
+                                           trainer_race, type, type_flags, lootid, pickpocketloot, skinloot,
+                                           PetSpellDataId, VehicleId, mingold, maxgold, AIName, MovementType,
+                                           HoverHeight, HealthModifier, ManaModifier, ArmorModifier, ExperienceModifier,
+                                           RacialLeader, movementId, RegenHealth, mechanic_immune_mask,
+                                           spell_school_immune_mask, flags_extra, ScriptName, VerifiedBuild)
+VALUES (300206, 0, 0, 0, 0, 0, 30721, 0, 0, 0, 'Teleporter', null, '', 0, 80, 80, 2, 35, 1, 1, 1.14286, 1, 1, 20, 0.5,
+        0, 0, 1, 2000, 2000, 1, 1, 8, 0, 2048, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 1, 1, 1, 1, 1, 0, 0,
+        1, 0, 0, 0, 'Teleporter', 12340);
 
 -- Gemmes
 DELETE FROM acore_world.creature_template WHERE entry = 300000;

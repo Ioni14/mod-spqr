@@ -17,6 +17,18 @@ public:
         ChatHandler(player->GetSession()).SendSysMessage("NeoLithic module loaded.");
     }
 
+    void OnPlayerPVPFlagChange(Player *player, bool state) override {
+        if (state) {
+            player->SetPvP(false);
+            OnFfaPvpStateUpdate(player, false);
+        }
+    }
+
+    void OnMapChanged(Player *player) override {
+        player->SetPvP(false);
+        OnFfaPvpStateUpdate(player, false);
+    }
+
     void OnFirstLogin(Player *player) override {
         if (!sConfigMgr->GetOption<bool>("NeoLithic.Enable", false)) {
             return;
