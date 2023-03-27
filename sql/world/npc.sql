@@ -82,10 +82,13 @@ VALUES (300202, 0, 0, 0, 0, 0, 30721, 0, 0, 0, 'Consommables', null, '', 0, 80, 
 
 DELETE FROM acore_world.npc_vendor WHERE entry = 300202;
 INSERT INTO acore_world.npc_vendor (entry, slot, item, maxcount, incrtime, ExtendedCost, VerifiedBuild)
-VALUES (300202, 0, 46376, 0, 0, 0, 0),
+VALUES -- flacons
+       (300202, 0, 46376, 0, 0, 0, 0),
        (300202, 0, 46377, 0, 0, 0, 0),
        (300202, 0, 46379, 0, 0, 0, 0),
        (300202, 0, 46378, 0, 0, 0, 0),
+       (300202, 0, 13511, 0, 0, 0, 0),
+       -- elixirs
        (300202, 1, 40068, 0, 0, 0, 0),
        (300202, 1, 40070, 0, 0, 0, 0),
        (300202, 1, 40076, 0, 0, 0, 0),
@@ -102,10 +105,13 @@ VALUES (300202, 0, 46376, 0, 0, 0, 0),
        (300202, 1, 44328, 0, 0, 0, 0),
        (300202, 1, 40109, 0, 0, 0, 0),
        (300202, 1, 40097, 0, 0, 0, 0),
+       -- potions
        (300202, 2, 40211, 0, 0, 0, 0),
        (300202, 2, 40212, 0, 0, 0, 0),
        (300202, 2, 40087, 0, 0, 0, 0),
        (300202, 2, 40093, 0, 0, 0, 0),
+       (300202, 2, 33448, 0, 0, 0, 0),
+       -- bouffes
        (300202, 3, 43015, 0, 0, 0, 0),
        (300202, 3, 42999, 0, 0, 0, 0),
        (300202, 3, 43000, 0, 0, 0, 0),
@@ -152,6 +158,8 @@ VALUES (300204, 0, 39690 /* Déclencheur d'explosion volatile */, 0, 0, 0, 0)
      , (300204, 1, 34052 /* Eclat de rêve */, 0, 0, 0, 0)
      , (300204, 1, 34055 /* Essence cosmique sup */, 0, 0, 0, 0)
      , (300204, 1, 34054 /* Poussière d'infini */, 0, 0, 0, 0)
+     , (300204, 1, 22449 /* Grand éclat prismatique */, 0, 0, 0, 0)
+     , (300204, 1, 22446 /* Essence planaire supérieure */, 0, 0, 0, 0)
      , (300204, 9, 6265 /* Fragment d'âme */, 0, 0, 0, 0)
 ;
 
@@ -169,9 +177,15 @@ INSERT INTO acore_world.creature_template (entry, difficulty_entry_1, difficulty
                                            HoverHeight, HealthModifier, ManaModifier, ArmorModifier, ExperienceModifier,
                                            RacialLeader, movementId, RegenHealth, mechanic_immune_mask,
                                            spell_school_immune_mask, flags_extra, ScriptName, VerifiedBuild)
-VALUES (300203, 0, 0, 0, 0, 0, 30721, 0, 0, 0, 'Stuff P2', null, '', 0, 80, 80, 2, 35, 1, 1, 1.14286, 1, 1, 20, 0.5,
+VALUES (300203, 0, 0, 0, 0, 0, 30721, 0, 0, 0, 'Stuff P2', null, '', 300203, 80, 80, 2, 35, 1, 1, 1.14286, 1, 1, 20, 0.5,
         0, 0, 1, 2000, 2000, 1, 1, 8, 0, 2048, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 1, 1, 1, 1, 1, 0, 0,
         1, 0, 0, 0, 'Stuffer', 12340);
+
+DELETE FROM acore_world.gossip_menu WHERE MenuID = 40203;
+INSERT INTO acore_world.gossip_menu (MenuID, TextID) VALUES (40203, 300203);
+
+DELETE FROM acore_world.npc_text WHERE ID = 300203;
+INSERT INTO acore_world.npc_text (ID, text0_0, text0_1, lang0, Probability0) VALUES (300203, 'Je vous envoie votre stuff par courrier.', 'Je vous envoie votre stuff par courrier.', 7, 1);
 
 -- Reputation
 DELETE FROM acore_world.creature_template WHERE entry = 300205;
@@ -633,6 +647,7 @@ VALUES
     (300106, 0, 43359, 0, 0, 0, 0),
     (300106, 0, 43361, 0, 0, 0, 0),
     -- paladin
+    (300107, 0, 41106, 0, 0, 0, 0),
     (300107, 0, 43869, 0, 0, 0, 0),
     (300107, 0, 41092, 0, 0, 0, 0),
     (300107, 0, 45745, 0, 0, 0, 0),

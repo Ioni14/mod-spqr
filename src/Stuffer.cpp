@@ -31,7 +31,7 @@ public:
         AddGossipItemFor(player, GOSSIP_ICON_TABARD, "DK impie", GOSSIP_SENDER_MAIN, 17);
         AddGossipItemFor(player, GOSSIP_ICON_TABARD, "DK givre", GOSSIP_SENDER_MAIN, 18);
         AddGossipItemFor(player, GOSSIP_ICON_TABARD, "DK sang", GOSSIP_SENDER_MAIN, 19);
-        SendGossipMenuFor(player, 1, creature->GetGUID());
+        SendGossipMenuFor(player, 300203, creature->GetGUID());
 
         return true;
     }
