@@ -14,7 +14,7 @@ public:
         if (!sConfigMgr->GetOption<bool>("NeoLithic.Enable", false)) {
             return;
         }
-        ChatHandler(player->GetSession()).SendSysMessage("NeoLithic module loaded.");
+        ChatHandler(player->GetSession()).SendSysMessage("MazeClan module loaded.");
     }
 
     void OnPlayerPVPFlagChange(Player *player, bool state) override {
@@ -40,6 +40,7 @@ public:
             player->EquipNewItem(slot, 38082, true);
         }
 
+        // Reputations Wotlk
         player->GetReputationMgr().SetOneFactionReputation(sFactionStore.LookupEntry(1090), 43000, false);
         player->GetReputationMgr().SetOneFactionReputation(sFactionStore.LookupEntry(1098), 43000, false);
         player->GetReputationMgr().SetOneFactionReputation(sFactionStore.LookupEntry(1091), 43000, false);
@@ -91,7 +92,7 @@ public:
             }
             case CLASS_MAGE:
                 // Portals
-                player->learnSpell(53142);
+                player->learnSpell(53142); // Dalaran
                 if (player->GetTeamId() == TEAM_ALLIANCE) {
                     player->learnSpell(11419);
                     player->learnSpell(32266);
@@ -99,6 +100,13 @@ public:
                     player->learnSpell(33691);
                     player->learnSpell(10059);
                     player->learnSpell(49360);
+                } else if (player->GetTeamId() == TEAM_HORDE) {
+                    player->learnSpell(11417);
+                    player->learnSpell(35717);
+                    player->learnSpell(32267);
+                    player->learnSpell(49361);
+                    player->learnSpell(11420);
+                    player->learnSpell(11418);
                 }
                 player->AddItem(17032, 20); // Portal rune
                 break;
@@ -118,23 +126,44 @@ public:
                 player->learnSpell(33943); // Forme de vol
                 player->learnSpell(40120); // Forme de vol rapide
                 // Forme d'ours
-                player->AddQuest(sObjectMgr->GetQuestTemplate(6001), nullptr);
-                player->RewardQuest(sObjectMgr->GetQuestTemplate(6001), 0, player, false);
+                if (player->GetTeamId() == TEAM_ALLIANCE) {
+                    player->AddQuest(sObjectMgr->GetQuestTemplate(6001), nullptr);
+                    player->RewardQuest(sObjectMgr->GetQuestTemplate(6001), 0, player, false);
+                } else if (player->GetTeamId() == TEAM_HORDE) {
+                    player->AddQuest(sObjectMgr->GetQuestTemplate(6002), nullptr);
+                    player->RewardQuest(sObjectMgr->GetQuestTemplate(6002), 0, player, false);
+                }
                 break;
             case CLASS_SHAMAN:
                 // Totems
-                player->AddQuest(sObjectMgr->GetQuestTemplate(9451), nullptr);
-                player->RewardQuest(sObjectMgr->GetQuestTemplate(9451), 0, player, false);
-                player->AddQuest(sObjectMgr->GetQuestTemplate(9555), nullptr);
-                player->RewardQuest(sObjectMgr->GetQuestTemplate(9555), 0, player, false);
-                player->AddQuest(sObjectMgr->GetQuestTemplate(9509), nullptr);
-                player->RewardQuest(sObjectMgr->GetQuestTemplate(9509), 0, player, false);
-                player->AddQuest(sObjectMgr->GetQuestTemplate(9554), nullptr);
-                player->RewardQuest(sObjectMgr->GetQuestTemplate(9554), 0, player, false);
+                if (player->GetTeamId() == TEAM_ALLIANCE) {
+                    player->AddQuest(sObjectMgr->GetQuestTemplate(9451), nullptr);
+                    player->RewardQuest(sObjectMgr->GetQuestTemplate(9451), 0, player, false);
+                    player->AddQuest(sObjectMgr->GetQuestTemplate(9555), nullptr);
+                    player->RewardQuest(sObjectMgr->GetQuestTemplate(9555), 0, player, false);
+                    player->AddQuest(sObjectMgr->GetQuestTemplate(9509), nullptr);
+                    player->RewardQuest(sObjectMgr->GetQuestTemplate(9509), 0, player, false);
+                    player->AddQuest(sObjectMgr->GetQuestTemplate(9554), nullptr);
+                    player->RewardQuest(sObjectMgr->GetQuestTemplate(9554), 0, player, false);
+                } else if (player->GetTeamId() == TEAM_HORDE) {
+                    player->AddQuest(sObjectMgr->GetQuestTemplate(1518), nullptr);
+                    player->RewardQuest(sObjectMgr->GetQuestTemplate(1518), 0, player, false);
+                    player->AddQuest(sObjectMgr->GetQuestTemplate(1527), nullptr);
+                    player->RewardQuest(sObjectMgr->GetQuestTemplate(1527), 0, player, false);
+                    player->AddQuest(sObjectMgr->GetQuestTemplate(96), nullptr);
+                    player->RewardQuest(sObjectMgr->GetQuestTemplate(96), 0, player, false);
+                    player->AddQuest(sObjectMgr->GetQuestTemplate(1532), nullptr);
+                    player->RewardQuest(sObjectMgr->GetQuestTemplate(1532), 0, player, false);
+                }
                 break;
             case CLASS_PALADIN:
-                player->learnSpell(13819 /* Cheval de guerre */);
-                player->learnSpell(23214 /* Destrier */);
+                if (player->GetTeamId() == TEAM_ALLIANCE) {
+                    player->learnSpell(13819 /* Cheval de guerre */);
+                    player->learnSpell(23214 /* Destrier */);
+                } else if (player->GetTeamId() == TEAM_HORDE) {
+                    player->learnSpell(34769 /* Cheval de guerre */);
+                    player->learnSpell(34767 /* Destrier */);
+                }
                 player->learnSpell(7328); // Redemption
                 break;
             case CLASS_DEATH_KNIGHT: {
