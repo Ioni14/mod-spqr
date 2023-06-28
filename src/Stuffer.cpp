@@ -9,7 +9,7 @@ public:
     bool OnGossipHello(Player *player, Creature *creature) {
         AddGossipItemFor(player, GOSSIP_ICON_TABARD, "Démoniste affliction", GOSSIP_SENDER_MAIN, 1);
         AddGossipItemFor(player, GOSSIP_ICON_TABARD, "Démoniste démono support", GOSSIP_SENDER_MAIN, 20);
-        AddGossipItemFor(player, GOSSIP_ICON_TABARD, "Chasseur survie", GOSSIP_SENDER_MAIN, 2);
+        AddGossipItemFor(player, GOSSIP_ICON_TABARD, "Chasseur précision", GOSSIP_SENDER_MAIN, 2);
         AddGossipItemFor(player, GOSSIP_ICON_TABARD, "Mage feu", GOSSIP_SENDER_MAIN, 3);
         AddGossipItemFor(player, GOSSIP_ICON_TABARD, "Prêtre ombre", GOSSIP_SENDER_MAIN, 4);
         AddGossipItemFor(player, GOSSIP_ICON_TABARD, "Prêtre disci", GOSSIP_SENDER_MAIN, 5);
@@ -23,11 +23,11 @@ public:
         AddGossipItemFor(player, GOSSIP_ICON_TABARD, "Chaman amélio", GOSSIP_SENDER_MAIN, 11);
         AddGossipItemFor(player, GOSSIP_ICON_TABARD, "Chaman elem", GOSSIP_SENDER_MAIN, 12);
         AddGossipItemFor(player, GOSSIP_ICON_TABARD, "Chaman heal", GOSSIP_SENDER_MAIN, 21);
-        AddGossipItemFor(player, GOSSIP_ICON_TABARD, "Paladin tank", GOSSIP_SENDER_MAIN, 13);
-        AddGossipItemFor(player, GOSSIP_ICON_TABARD, "Paladin heal", GOSSIP_SENDER_MAIN, 14);
-        AddGossipItemFor(player, GOSSIP_ICON_DOT, "Anci", GOSSIP_SENDER_MAIN, 15);
+        AddGossipItemFor(player, GOSSIP_ICON_TABARD, "Paladin prot", GOSSIP_SENDER_MAIN, 13);
+        AddGossipItemFor(player, GOSSIP_ICON_TABARD, "Paladin sacré", GOSSIP_SENDER_MAIN, 14);
+        AddGossipItemFor(player, GOSSIP_ICON_TABARD, "Paladin ret", GOSSIP_SENDER_MAIN, 15);
         AddGossipItemFor(player, GOSSIP_ICON_TABARD, "Guerrier fury", GOSSIP_SENDER_MAIN, 16);
-        AddGossipItemFor(player, GOSSIP_ICON_TABARD, "Guerrier tank", GOSSIP_SENDER_MAIN, 22);
+        AddGossipItemFor(player, GOSSIP_ICON_TABARD, "Guerrier prot", GOSSIP_SENDER_MAIN, 22);
         AddGossipItemFor(player, GOSSIP_ICON_TABARD, "DK impie", GOSSIP_SENDER_MAIN, 17);
         AddGossipItemFor(player, GOSSIP_ICON_TABARD, "DK givre", GOSSIP_SENDER_MAIN, 18);
         AddGossipItemFor(player, GOSSIP_ICON_TABARD, "DK sang", GOSSIP_SENDER_MAIN, 19);
@@ -42,146 +42,146 @@ public:
         switch (action) {
             case 1: // Démoniste affli
             {
-                sendMail(player, "Armures P2", {45497, 46068, 45618, 46137, 45446, 45665, 45619, 46139, 45135});
-                sendMail(player, "Armes et accessoires P2", {45133, 45495, 46046, 45518, 45466, 45620, 45617, 45294, 45457});
+                sendMail(player, "Armures P3", {47796, 47793, 47551, 47462, 47485, 47797, 47419, 47795, 47454});
+                sendMail(player, "Armes et accessoires P3", {47468, 47422, 48032, 45294, 47489, 45495, 45518, 45466});
                 break;
             }
             case 20: // Démoniste démono support
             {
-                sendMail(player, "Armures P2", {45497, 46068, 45618, 45240, 45446, 45520, 45619, 45488, 45135});
-                sendMail(player, "Armes et accessoires P2", {45243, 45495, 45297, 45518, 40255, 45620, 45617, 45294});
+                sendMail(player, "Armures P3", {47796, 47793, 47554, 47794, 47485, 47797, 47419, 47435, 47454});
+                sendMail(player, "Armes et accessoires P3", {45133, 47422, 47470, 45294, 47489, 45495, 45518, 40255});
                 break;
             }
-            case 2: // Chasseur survie
+            case 2: // Chasseur précision
             {
-                sendMail(player, "Armures P2", {45610, 45300, 46032, 45473, 45869, 45444, 46095, 45536, 45244});
-                sendMail(player, "Armes et accessoires P2", {45517, 45608, 46322, 44253, 46038, 45613, 45570});
+                sendMail(player, "Armures P3", {48267, 48269, 47546, 46965, 47442, 48266, 47472, 48268, 47457});
+                sendMail(player, "Armes et accessoires P3", {47433, 47491, 46995, 45931, 47464, 45608, 47443});
                 break;
             }
             case 3: // Mage feu
             {
-                sendMail(player, "Armures P2", {46129, 46134, 45242, 46130, 45446, 45665, 45619, 46133, 45537});
-                sendMail(player, "Armes et accessoires P2", {45133, 45495, 46046, 45466, 45518, 45620, 45617, 45294, 45457});
+                sendMail(player, "Armures P3", {47764, 47767, 47551, 47462, 47467, 47763, 47447, 47765, 47454});
+                sendMail(player, "Armes et accessoires P3", {47468, 47518, 47437, 45294, 45518, 47477, 47489, 45495});
                 break;
             }
             case 4: // Prêtre ombre
             {
-                sendMail(player, "Armures P2", {46172, 46165, 45242, 46168, 45446, 45665, 45619, 46170, 45135});
-                sendMail(player, "Armes et accessoires P2", {45243, 45495, 46046, 45466, 45518, 45620, 45617, 45294, 45457});
+                sendMail(player, "Armures P3", {48088, 48091, 47551, 48090, 47467, 45665, 47419, 48089, 47097});
+                sendMail(player, "Armes et accessoires P3", {47468, 47483, 47470, 45294, 45495, 47237, 45518, 47477});
                 break;
             }
             case 5: // Prêtre disci
             {
-                sendMail(player, "Armures P2", {46197, 45390, 45486, 46193, 45146, 45520, 45558, 45388, 46050});
-                sendMail(player, "Armes et accessoires P2", {45933, 45946, 46096, 40432, 45535, 45612, 45314, 45294});
+                sendMail(player, "Armures P3", {46197, 46190, 47490, 46193, 47588, 46188, 45619, 47478, 46050});
+                sendMail(player, "Armes et accessoires P3", {48003, 47483, 47470, 45294, 46096, 47439, 40432, 47432});
                 break;
             }
             case 24: // Prêtre sacré
             {
-                sendMail(player, "Armures P2", {46197, 45390, 45486, 46193, 44008, 45520, 45558, 45388, 46050});
-                sendMail(player, "Armes et accessoires P2", {45447, 45946, 46323, 46051, 45535, 46035, 45271, 45511});
+                sendMail(player, "Armures P3", {49482, 46068, 45618, 47604, 47586, 48066, 45619, 48064, 45135});
+                sendMail(player, "Armes et accessoires P3", {45443, 47483, 47470, 47995, 45946, 47439, 45535, 47432});
                 break;
             }
             case 6: // voleur assa
             {
-                sendMail(player, "Armures P2", {46125, 45245, 45461, 45473, 45611, 46124, 46095, 45536, 45564});
-                sendMail(player, "Armes et accessoires P2", {45517, 45484, 45484, 45570, 46048, 45608, 45609, 46038});
+                sendMail(player, "Armures P3", {48235, 48237, 47546, 48233, 47474, 48234, 47460, 47420, 47445});
+                sendMail(player, "Armes et accessoires P3", {47433, 47416, 47416, 47523, 47443, 45608, 45609, 47464});
                 break;
             }
             case 7: // voleur combat
             {
-                sendMail(player, "Armures P2", {45993, 45245, 45461, 45473, 45869, 46043, 46095, 45536, 45564});
-                sendMail(player, "Armes et accessoires P2", {45517, 45132, 45484, 45296, 46048, 45608, 45609, 45931});
+                sendMail(player, "Armures P3", {48235, 48237, 47546, 48233, 47474, 48234, 47460, 47420, 47445});
+                sendMail(player, "Armes et accessoires P3", {47433, 47475, 47427, 47523, 47443, 48007, 45609, 47464});
                 break;
             }
             case 8: // druide feral dps
             {
-                sendMail(player, "Armures P2", {46161, 45245, 46032, 45473, 45869, 46158, 46095, 45536, 45564});
-                sendMail(player, "Armes et accessoires P2", {45517, 45613, 40713, 46048, 45608, 45609, 45931});
+                sendMail(player, "Armures P3", {48201, 48198, 47546, 48199, 47474, 48202, 47460, 45536, 47445});
+                sendMail(player, "Armes et accessoires P3", {47433, 47463, 47668, 47464, 45931, 45608, 47443});
                 break;
             }
             case 9: // druide equi
             {
-                sendMail(player, "Armures P2", {46191, 46196, 45242, 46194, 45446, 45665, 45619, 46192, 45537});
-                sendMail(player, "Armes et accessoires P2", {45933, 46046, 45495, 45466, 45518, 45620, 45617, 40321, 45457});
+                sendMail(player, "Armures P3", {48174, 48177, 47551, 48176, 47467, 47454, 47479, 47447, 48173});
+                sendMail(player, "Armes et accessoires P3", {47468, 47483, 47437, 47670, 47477, 45518, 46046, 47489});
                 break;
             }
             case 10: // druide heal
             {
-                sendMail(player, "Armures P2", {46184, 46187, 45618, 45519, 45446, 46183, 45616, 46185, 45135});
-                sendMail(player, "Armes et accessoires P2", {45243, 45495, 45946, 45703, 45535, 45612, 45271, 40342});
+                sendMail(player, "Armures P3", {47554, 47438, 47454, 47469, 48176, 46184, 46187, 46185, 46183});
+                sendMail(player, "Armes et accessoires P3", {47468, 46017, 40342, 48032, 45535, 47432, 47439, 45495});
                 break;
             }
             case 23: // druide tank
             {
-                sendMail(player, "Armures P2", {41678, 45245, 45496, 45473, 45611, 46043, 46095, 45536, 45232});
-                sendMail(player, "Armes et accessoires P2", {45517, 45471, 45608, 45158, 46021, 45533, 45509});
+                sendMail(player, "Armures P3", {47549, 47155, 47112, 46975, 47077, 48201, 48198, 48199, 48202});
+                sendMail(player, "Armes et accessoires P3", {47133, 48523, 45509, 45158, 47088, 49489, 47955});
                 break;
             }
             case 11: // chaman amélio
             {
-                sendMail(player, "Armures P2", {45610, 46203, 45461, 46205, 45460, 46200, 45553, 46208, 45989});
-                sendMail(player, "Armes et accessoires P2", {45517, 45456, 46046, 46038, 45609, 45612, 46097, 42608, 45132});
+                sendMail(player, "Armures P3", {48358, 47456, 48360, 47551, 47412, 47989, 48357, 47460, 48359});
+                sendMail(player, "Armes et accessoires P3", {47433, 47483, 47475, 47666, 47443, 46046, 47477, 45609});
                 break;
             }
             case 12: // chaman elem
             {
-                sendMail(player, "Armures P2", {46209, 46211, 45242, 46206, 45460, 45665, 45616, 46210, 45537});
-                sendMail(player, "Armes et accessoires P2", {45933, 46046, 45495, 40255, 45518, 45612, 45470, 40267});
+                sendMail(player, "Armures P3", {48328, 48330, 47551, 48326, 45460, 48327, 47447, 47479, 47456});
+                sendMail(player, "Armes et accessoires P3", {47468, 47422, 47448, 47666, 45495, 46046, 47477, 45518});
                 break;
             }
             case 21: // chaman heal
             {
-                sendMail(player, "Armures P2", {46201, 46204, 45486, 45867, 45460, 46199, 45151, 46202, 45615});
-                sendMail(player, "Armes et accessoires P2", {45443, 45614, 46046, 45535, 45466, 45612, 45470, 45114});
+                sendMail(player, "Armures P3", {46201, 46204, 47551, 46198, 45460, 46199, 47426, 47479, 47456});
+                sendMail(player, "Armes et accessoires P3", {47468, 46017, 47448, 47665, 45614, 47439, 45535, 47059, 47206});
                 break;
             }
             case 13: // paladin tank
             {
-                sendMail(player, "Armures P2", {46175, 46177, 45496, 46039, 45111, 45487, 45825, 45594, 45988});
-                sendMail(player, "Armes et accessoires P2", {45485, 45326, 45471, 45158, 46021, 45947, 45587, 45145});
+                sendMail(player, "Armures P3", {48649, 48647, 47550, 47415, 47459, 48650, 47444, 48648, 47430});
+                sendMail(player, "Armes et accessoires P3", {47466, 47475, 47421, 47661, 45158, 47451, 47476, 45471});
                 break;
             }
             case 14: // paladin heal
             {
-                sendMail(player, "Armures P2", {46180, 46182, 45486, 45445, 45460, 46179, 45616, 46181, 45537});
-                sendMail(player, "Armes et accessoires P2", {45443, 45614, 45946, 46051, 37111, 45612, 45470, 40705});
+                sendMail(player, "Armures P3", {48587, 48585, 47551, 47471, 45460, 45665, 47997, 47440, 47424});
+                sendMail(player, "Armes et accessoires P3", {47468, 46017, 47448, 40705, 37111, 46051, 45614, 47439});
                 break;
             }
             case 15: // paladin ret
             {
-                sendMail(player, "Armures P2", {45472, 45245, 46032, 45473, 45663, 45444, 46095, 45134, 45599});
-                sendMail(player, "Armes et accessoires P2", {45517, 45608, 45534, 45609, 42987, 45516, 42853, 49623});
+                sendMail(player, "Armures P3", {48619, 48621, 47548, 48617, 47474, 48618, 47429, 47465, 47473});
+                sendMail(player, "Armes et accessoires P3", {47060, 47520, 47661, 42987, 47464, 47443, 47413});
                 break;
             }
             case 16: // guerrier fury
             {
-                sendMail(player, "Armures P2", {46151, 46149, 46032, 46146, 45611, 46148, 46095, 45536, 45599});
-                sendMail(player, "Armes et accessoires P2", {45517, 46322, 45608, 45931, 42987, 45516, 45516, 45296});
+                sendMail(player, "Armures P3", {48398, 48400, 47545, 48396, 47414, 47240, 47002, 48399, 47445});
+                sendMail(player, "Armes et accessoires P3", {47433, 47446, 47446, 47428, 46966, 47075, 45931, 47131});
                 break;
             }
             case 22: // guerrier tank
             {
-                sendMail(player, "Armures P2", {46166, 46167, 45496, 46162, 45111, 45487, 45139, 45594, 45988});
-                sendMail(player, "Armes et accessoires P2", {45485, 45471, 45247, 45158, 46021, 45442, 45587, 45137});
+                sendMail(player, "Armures P3", {48468, 48470, 47550, 47415, 47459, 48467, 47444, 48469, 47430});
+                sendMail(player, "Armes et accessoires P3", {47466, 47513, 45587, 47660, 47476, 45471, 47451, 45158});
                 break;
             }
             case 17: // DK impie
             {
-                sendMail(player, "Armures P2", {45472, 46117, 45588, 46111, 45663, 45481, 45241, 45134, 45599});
-                sendMail(player, "Armes et accessoires P2", {46040, 45250, 45534, 45609, 42987, 46097, 46036, 45254});
+                sendMail(player, "Armures P3", {48493,48495,47548,48491,45663,48492,47429,47465,45599 });
+                sendMail(player, "Armes et accessoires P3", {47458,47475,47528,47673,47464,45609,47993,47413 });
                 break;
             }
             case 18: // DK givre
             {
-                sendMail(player, "Armures P2", {46115, 46117, 46032, 46111, 45663, 46113, 45241, 45134, 45599});
-                sendMail(player, "Armes et accessoires P2", {45459, 45608, 45534, 45931, 42987, 46097, 46097, 40207});
+                sendMail(player, "Armures P3", { 45599, 48494, 45241, 47492, 48493, 48495, 47548, 48491, 45663 });
+                sendMail(player, "Armes et accessoires P3", { 47475, 47475, 40207, 47458, 47413, 45534, 45931, 47464});
                 break;
             }
             case 19: // DK sang
             {
-                sendMail(player, "Armures P2", {46120, 46122, 45496, 46118, 45111, 46119, 45551, 45594, 45988});
-                sendMail(player, "Armes et accessoires P2", {45485, 45471, 45871, 45158, 46021, 45533, 45144});
+                sendMail(player, "Armures P3", { 48546, 47076, 47061, 47003, 47111, 46968, 47549, 48543, 48545 });
+                sendMail(player, "Armes et accessoires P3", { 47515, 47672, 47133, 49489, 47088, 45158, 47955 });
                 break;
             }
             case 99:
