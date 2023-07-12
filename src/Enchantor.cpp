@@ -12,6 +12,8 @@ public:
         AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Joaillerie 450 + recettes", GOSSIP_SENDER_MAIN, 3);
         AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Ingénierie 450 + recettes", GOSSIP_SENDER_MAIN, 4);
         AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Alchimie 450 + recettes", GOSSIP_SENDER_MAIN, 5);
+        AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Forge 450 + recettes", GOSSIP_SENDER_MAIN, 6);
+        AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Cuisine 450 + recettes", GOSSIP_SENDER_MAIN, 7);
         SendGossipMenuFor(player, 1, creature->GetGUID());
 
         return true;
@@ -82,6 +84,28 @@ public:
                 CloseGossipMenuFor(player);
 
                 uint32 skillId = 171;
+
+                learnSkill(player, skillId);
+                player->SetSkill(skillId, 0, 450, 450);
+
+                break;
+            }
+            case 6: // Forge
+            {
+                CloseGossipMenuFor(player);
+
+                uint32 skillId = 164;
+
+                learnSkill(player, skillId);
+                player->SetSkill(skillId, 0, 450, 450);
+
+                break;
+            }
+            case 7: // Cuisine
+            {
+                CloseGossipMenuFor(player);
+
+                uint32 skillId = 185;
 
                 learnSkill(player, skillId);
                 player->SetSkill(skillId, 0, 450, 450);

@@ -47,6 +47,7 @@ VALUES (300201, 0, 41611 /* Boucle de ceinture éternelle */, 0, 0, 0, 0),
        (300201, 0, 38374 /* Renfort */, 0, 0, 0, 0),
        (300201, 0, 38373 /* Renfort */, 0, 0, 0, 0),
        (300201, 0, 44963 /* Renfort */, 0, 0, 0, 0),
+       (300201, 0, 44957 /* Calligraphie supérieure du gladiateur */, 0, 0, 0, 0),
        (300201, 0, 41602 /* Fil */, 0, 0, 0, 0),
        (300201, 0, 41604 /* Fil */, 0, 0, 0, 0),
        (300201, 0, 44936 /* Plaque titane */, 0, 0, 0, 0),
@@ -144,6 +145,8 @@ INSERT INTO acore_world.npc_vendor (entry, slot, item, maxcount, incrtime, Exten
 VALUES (300204, 0, 39690 /* Déclencheur d'explosion volatile */, 0, 0, 0, 0)
      , (300204, 0, 36913 /* Barre saronite */, 0, 0, 0, 0)
      , (300204, 0, 41163 /* Barre titane */, 0, 0, 0, 0)
+     , (300204, 0, 37663 /* Barre acier-titan */, 0, 0, 0, 0)
+     , (300204, 0, 47556 /* Orbe de croisé */, 0, 0, 0, 0)
      , (300204, 0, 39682 /* Condensateur surchargé */, 0, 0, 0, 0)
      , (300204, 0, 39681 /* Boulons cobalt */, 0, 0, 0, 0)
      , (300204, 0, 39683 /* Tube givracier */, 0, 0, 0, 0)

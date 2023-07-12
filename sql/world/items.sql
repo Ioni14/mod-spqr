@@ -22,3 +22,13 @@ WHERE entry = 45665;
 UPDATE acore_world.item_template
 SET stat_value1 = 29, stat_value2 = 22, stat_value3 = 25, stat_value4 = 33, stat_value5 = 51, ItemLevel = 245
 WHERE entry = 45294;
+
+-- update meteorite cristal trinket (pas touché l'effet)
+UPDATE acore_world.item_template
+SET stat_value1 = 125
+WHERE entry = 46051;
+
+-- update heart of iron trinket (pas touché l'effet)
+UPDATE acore_world.item_template
+SET stat_value1 = 171
+WHERE entry = 45158;
