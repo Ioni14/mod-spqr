@@ -54,8 +54,8 @@ public:
             }
             case 2: // Chasseur précision
             {
-                sendMail(player, "Armures P3", {48267, 48269, 47546, 46965, 47442, 48266, 47472, 48268, 47457});
-                sendMail(player, "Armes et accessoires P3", {47433, 47491, 46995, 45931, 47464, 45608, 47443});
+                sendMail(player, "Armures P3", {48267, 48269, 47546, 46965, 47442, 48266, 47472, 48268, 47457, 47480, 48265});
+                sendMail(player, "Armes et accessoires P3", {47433, 47491, 46995, 45931, 47464, 45608, 47443, 47523});
                 break;
             }
             case 3: // Mage feu
