@@ -66,8 +66,8 @@ public:
             }
             case 4: // Prêtre ombre
             {
-                sendMail(player, "Armures P3", {48088, 48091, 47551, 48090, 47467, 45665, 47419, 48089, 47097});
-                sendMail(player, "Armes et accessoires P3", {47468, 47483, 47470, 45294, 45495, 47237, 45518, 47477});
+                sendMail(player, "Armures P3", {48088, 48091, 47551, 48090, 47467, 45665, 47419, 48089, 47454});
+                sendMail(player, "Armes et accessoires P3", {47468, 47483, 47470, 45294, 45495, 47489, 45518, 47477});
                 break;
             }
             case 5: // Prêtre disci

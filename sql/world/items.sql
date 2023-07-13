@@ -1,6 +1,6 @@
 -- update Nebula
 UPDATE acore_world.item_template
-SET stat_value1 = 83, stat_value2 = 55, stat_value3 = 41, stat_value4 = 41, stat_value5 = 53
+SET stat_value1 = 83, stat_value2 = 55, stat_value3 = 41, stat_value4 = 41, stat_value5 = 53, ItemLevel = 239
 WHERE entry = 46046;
 
 -- update la valeur d'AP de la comet a 271 (pas touché l'effet)
@@ -25,10 +25,20 @@ WHERE entry = 45294;
 
 -- update meteorite cristal trinket (pas touché l'effet)
 UPDATE acore_world.item_template
-SET stat_value1 = 125
+SET stat_value1 = 125, ItemLevel = 239
 WHERE entry = 46051;
 
 -- update heart of iron trinket (pas touché l'effet)
 UPDATE acore_world.item_template
-SET stat_value1 = 171
+SET stat_value1 = 171, ItemLevel = 232
 WHERE entry = 45158;
+
+-- update flare of the heavens trinket (pas touché l'effet)
+UPDATE acore_world.item_template
+SET stat_value1 = 135, ItemLevel = 252
+WHERE entry = 45518;
+
+-- update scale of fates trinket (pas touché l'effet)
+UPDATE acore_world.item_template
+SET stat_value1 = 132, ItemLevel = 232
+WHERE entry = 45466;
